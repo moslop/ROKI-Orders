@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ROKI — Own the Edge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700;900&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <div class="nav-links">
+      <a href="#home" data-i18n="nav_home">Home</a>
+      <a href="#collections" data-i18n="nav_collections">Collections</a>
+      <a href="#about" data-i18n="nav_about">About</a>
+      <a href="order.html" class="nav-order-btn" data-i18n="nav_order">Order Now</a>
+    </div>
+
+    <a href="index.html" class="logo">
+      <span class="logo-ar">روكي</span>
+      <span class="logo-en">ROKI</span>
+    </a>
+
+    <div class="nav-right">
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <span>/</span>
+        <button class="lang-btn" data-lang="ar">AR</button>
+        <span>/</span>
+        <button class="lang-btn" data-lang="fr">FR</button>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home" data-i18n="nav_home">Home</a>
+    <a href="#collections" data-i18n="nav_collections">Collections</a>
+    <a href="#about" data-i18n="nav_about">About</a>
+    <a href="order.html" data-i18n="nav_order">Order Now</a>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="home">
+  <div class="hero-bg-shapes">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+    <div class="noise-overlay"></div>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-badge" data-i18n="hero_badge">NEW DROP 2025</div>
+      <h1 class="hero-title">
+        <span class="line-1" data-i18n="hero_title1">Own the Edge,</span>
+        <span class="line-2" data-i18n="hero_title2">Keep the Vibe</span>
+      </h1>
+      <div class="hero-underline"></div>
+      <p class="hero-sub" data-i18n="hero_sub">Streetwear that speaks before you do. Crafted for the bold.</p>
+      <div class="hero-ctas">
+        <a href="order.html" class="btn-primary" data-i18n="hero_cta1">Order Now</a>
+        <a href="#collections" class="btn-ghost" data-i18n="hero_cta2">Explore</a>
+      </div>
+    </div>
+
+    <div class="hero-visuals">
+      <div class="hero-img-frame main-frame">
+        <div class="img-placeholder city-look">
+          <div class="placeholder-icon">👕</div>
+          <span data-i18n="img_placeholder">Your Lookbook Photo</span>
+        </div>
+        <div class="frame-accent top-right"></div>
+        <div class="frame-accent bottom-left"></div>
+      </div>
+      <div class="hero-img-frame side-frame">
+        <div class="img-placeholder city-look-2">
+          <div class="placeholder-icon">🧥</div>
+          <span data-i18n="img_placeholder2">Style Shot</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div class="scroll-indicator">
+    <div class="scroll-line"></div>
+    <span data-i18n="scroll_down">Scroll</span>
+  </div>
+</section>
+
+<!-- ===== FEATURES BAR ===== -->
+<div class="features-bar">
+  <div class="feature-item">
+    <span class="feat-icon">🚚</span>
+    <span data-i18n="feat_delivery">Fast Delivery</span>
+  </div>
+  <div class="feat-divider"></div>
+  <div class="feature-item">
+    <span class="feat-icon">✦</span>
+    <span data-i18n="feat_quality">High Quality</span>
+  </div>
+  <div class="feat-divider"></div>
+  <div class="feature-item">
+    <span class="feat-icon">💎</span>
+    <span data-i18n="feat_design">Unique Designs</span>
+  </div>
+  <div class="feat-divider"></div>
+  <div class="feature-item">
+    <span class="feat-icon">🇩🇿</span>
+    <span data-i18n="feat_algeria">All Algeria</span>
+  </div>
+</div>
+
+<!-- ===== COLLECTIONS ===== -->
+<section class="collections" id="collections">
+  <div class="section-header">
+    <div class="section-tag" data-i18n="col_tag">THE COLLECTION</div>
+    <h2 class="section-title" data-i18n="col_title">Latest Drops</h2>
+  </div>
+
+  <div class="collection-grid">
+    <div class="col-item large">
+      <div class="col-img-wrap">
+        <div class="col-placeholder">
+          <span>👕</span>
+          <p data-i18n="col_item1">Hoodie Collection</p>
+        </div>
+        <div class="col-overlay">
+          <span class="col-name" data-i18n="col_item1_name">ROKI CORE</span>
+          <a href="order.html" class="col-btn" data-i18n="order_btn">Order</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-item">
+      <div class="col-img-wrap">
+        <div class="col-placeholder">
+          <span>🧥</span>
+          <p data-i18n="col_item2">Jacket Line</p>
+        </div>
+        <div class="col-overlay">
+          <span class="col-name" data-i18n="col_item2_name">URBAN EDGE</span>
+          <a href="order.html" class="col-btn" data-i18n="order_btn">Order</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-item">
+      <div class="col-img-wrap">
+        <div class="col-placeholder">
+          <span>👖</span>
+          <p data-i18n="col_item3">Cargo Pants</p>
+        </div>
+        <div class="col-overlay">
+          <span class="col-name" data-i18n="col_item3_name">STREET CARGO</span>
+          <a href="order.html" class="col-btn" data-i18n="order_btn">Order</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-item">
+      <div class="col-img-wrap">
+        <div class="col-placeholder">
+          <span>🧢</span>
+          <p data-i18n="col_item4">Caps & Accessories</p>
+        </div>
+        <div class="col-overlay">
+          <span class="col-name" data-i18n="col_item4_name">ROKI CAPS</span>
+          <a href="order.html" class="col-btn" data-i18n="order_btn">Order</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="about-visual">
+      <div class="about-img-wrap">
+        <div class="about-placeholder">
+          <span>⚡</span>
+        </div>
+        <div class="about-tag-1" data-i18n="about_tag1">ALGERIAN BRAND</div>
+        <div class="about-tag-2" data-i18n="about_tag2">EST. 2025</div>
+      </div>
+    </div>
+    <div class="about-text">
+      <div class="section-tag" data-i18n="about_tag">OUR STORY</div>
+      <h2 class="section-title" data-i18n="about_title">Born from the Streets of Algeria</h2>
+      <p data-i18n="about_p1">ROKI is more than a brand — it's a movement. Born from Algerian streets, we create streetwear that blends urban culture with authentic local identity.</p>
+      <p data-i18n="about_p2">Every piece is crafted with precision and passion, designed for those who dare to stand out. From Ouargla to Algiers, ROKI delivers to every wilaya.</p>
+      <a href="order.html" class="btn-primary" data-i18n="about_cta">Order Your Piece</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA BANNER ===== -->
+<section class="cta-banner">
+  <div class="cta-noise"></div>
+  <div class="cta-content">
+    <h2 data-i18n="cta_title">Ready to Rock the Streets?</h2>
+    <p data-i18n="cta_sub">Order now and get delivery anywhere in Algeria.</p>
+    <a href="order.html" class="btn-white" data-i18n="cta_btn">Place Your Order</a>
+  </div>
+  <div class="cta-shapes">
+    <div class="cta-shape-1"></div>
+    <div class="cta-shape-2"></div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="logo-ar">روكي</span>
+      <span class="logo-en">ROKI</span>
+      <p data-i18n="footer_tagline">Own the Edge. Keep the Vibe.</p>
+    </div>
+    <div class="footer-links">
+      <a href="#home" data-i18n="nav_home">Home</a>
+      <a href="#collections" data-i18n="nav_collections">Collections</a>
+      <a href="#about" data-i18n="nav_about">About</a>
+      <a href="order.html" data-i18n="nav_order">Order</a>
+    </div>
+    <div class="footer-contact">
+      <p>📱 <a href="https://wa.me/213655295217">+213 655 295 217</a></p>
+      <p data-i18n="footer_dz">🇩🇿 Algeria — All Wilayas</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 ROKI. All rights reserved.</span>
+  </div>
+</footer>
+
+<script src="i18n.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ROKI — Place Your Order</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700;900&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="order-page">
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <div class="nav-links">
+      <a href="index.html" data-i18n="nav_home">Home</a>
+      <a href="index.html#collections" data-i18n="nav_collections">Collections</a>
+      <a href="index.html#about" data-i18n="nav_about">About</a>
+      <a href="order.html" class="nav-order-btn active" data-i18n="nav_order">Order Now</a>
+    </div>
+    <a href="index.html" class="logo">
+      <span class="logo-ar">روكي</span>
+      <span class="logo-en">ROKI</span>
+    </a>
+    <div class="nav-right">
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <span>/</span>
+        <button class="lang-btn" data-lang="ar">AR</button>
+        <span>/</span>
+        <button class="lang-btn" data-lang="fr">FR</button>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" data-i18n="nav_home">Home</a>
+    <a href="index.html#collections" data-i18n="nav_collections">Collections</a>
+    <a href="index.html#about" data-i18n="nav_about">About</a>
+    <a href="order.html" data-i18n="nav_order">Order Now</a>
+  </div>
+</nav>
+
+<!-- ===== ORDER HERO ===== -->
+<div class="order-hero">
+  <div class="order-hero-bg">
+    <div class="oh-shape-1"></div>
+    <div class="oh-shape-2"></div>
+  </div>
+  <div class="order-hero-text">
+    <div class="section-tag" data-i18n="order_tag">PLACE YOUR ORDER</div>
+    <h1 data-i18n="order_title">Get Your ROKI Piece</h1>
+    <p data-i18n="order_sub">Fill in your details and we'll deliver straight to your door — anywhere in Algeria.</p>
+  </div>
+</div>
+
+<!-- ===== ORDER FORM ===== -->
+<section class="order-section">
+  <div class="order-container">
+
+    <div class="order-info-card">
+      <h3 data-i18n="info_title">Why Order with ROKI?</h3>
+      <ul>
+        <li>🚚 <span data-i18n="info_1">Fast delivery to all 58 wilayas</span></li>
+        <li>✅ <span data-i18n="info_2">Confirm by phone before shipping</span></li>
+        <li>💳 <span data-i18n="info_3">Cash on delivery available</span></li>
+        <li>🔄 <span data-i18n="info_4">Easy returns & exchanges</span></li>
+      </ul>
+      <div class="info-contact">
+        <p data-i18n="info_contact_label">Or contact us directly:</p>
+        <a href="https://wa.me/213655295217" class="whatsapp-btn">
+          <span>💬</span> WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <div class="form-card">
+      <div class="form-header">
+        <h2 data-i18n="form_title">Order Form</h2>
+        <div class="form-accent-line"></div>
+      </div>
+
+      <!-- SUCCESS MESSAGE -->
+      <div class="success-msg" id="successMsg" style="display:none;">
+        <div class="success-icon">✅</div>
+        <h3 data-i18n="success_title">Order Received!</h3>
+        <p data-i18n="success_sub">We'll contact you soon to confirm your order.</p>
+        <a href="index.html" class="btn-primary" data-i18n="success_back">Back to Home</a>
+      </div>
+
+      <form id="orderForm" novalidate>
+        <!-- Name Row -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName" data-i18n="lbl_fname">First Name</label>
+            <input type="text" id="firstName" name="firstName" placeholder="Ahmed" required />
+            <span class="err-msg" data-i18n="err_required">Required</span>
+          </div>
+          <div class="form-group">
+            <label for="lastName" data-i18n="lbl_lname">Last Name</label>
+            <input type="text" id="lastName" name="lastName" placeholder="Benali" required />
+            <span class="err-msg" data-i18n="err_required">Required</span>
+          </div>
+        </div>
+
+        <!-- Phone -->
+        <div class="form-group">
+          <label for="phone" data-i18n="lbl_phone">Phone Number</label>
+          <div class="phone-input-wrap">
+            <span class="phone-prefix">🇩🇿 +213</span>
+            <input type="tel" id="phone" name="phone" placeholder="06 55 XX XX XX" required pattern="[0-9]{9,10}" />
+          </div>
+          <span class="err-msg" data-i18n="err_phone">Enter a valid Algerian phone number</span>
+        </div>
+
+        <!-- Wilaya -->
+        <div class="form-group">
+          <label for="wilaya" data-i18n="lbl_wilaya">Wilaya (Province)</label>
+          <div class="select-wrap">
+            <select id="wilaya" name="wilaya" required>
+              <option value="" data-i18n="sel_wilaya">— Select Wilaya —</option>
+              <option value="Adrar">01 - Adrar</option>
+              <option value="Chlef">02 - Chlef</option>
+              <option value="Laghouat">03 - Laghouat</option>
+              <option value="Oum El Bouaghi">04 - Oum El Bouaghi</option>
+              <option value="Batna">05 - Batna</option>
+              <option value="Béjaïa">06 - Béjaïa</option>
+              <option value="Biskra">07 - Biskra</option>
+              <option value="Béchar">08 - Béchar</option>
+              <option value="Blida">09 - Blida</option>
+              <option value="Bouira">10 - Bouira</option>
+              <option value="Tamanrasset">11 - Tamanrasset</option>
+              <option value="Tébessa">12 - Tébessa</option>
+              <option value="Tlemcen">13 - Tlemcen</option>
+              <option value="Tiaret">14 - Tiaret</option>
+              <option value="Tizi Ouzou">15 - Tizi Ouzou</option>
+              <option value="Alger">16 - Alger</option>
+              <option value="Djelfa">17 - Djelfa</option>
+              <option value="Jijel">18 - Jijel</option>
+              <option value="Sétif">19 - Sétif</option>
+              <option value="Saïda">20 - Saïda</option>
+              <option value="Skikda">21 - Skikda</option>
+              <option value="Sidi Bel Abbès">22 - Sidi Bel Abbès</option>
+              <option value="Annaba">23 - Annaba</option>
+              <option value="Guelma">24 - Guelma</option>
+              <option value="Constantine">25 - Constantine</option>
+              <option value="Médéa">26 - Médéa</option>
+              <option value="Mostaganem">27 - Mostaganem</option>
+              <option value="M'Sila">28 - M'Sila</option>
+              <option value="Mascara">29 - Mascara</option>
+              <option value="Ouargla">30 - Ouargla</option>
+              <option value="Oran">31 - Oran</option>
+              <option value="El Bayadh">32 - El Bayadh</option>
+              <option value="Illizi">33 - Illizi</option>
+              <option value="Bordj Bou Arréridj">34 - Bordj Bou Arréridj</option>
+              <option value="Boumerdès">35 - Boumerdès</option>
+              <option value="El Tarf">36 - El Tarf</option>
+              <option value="Tindouf">37 - Tindouf</option>
+              <option value="Tissemsilt">38 - Tissemsilt</option>
+              <option value="El Oued">39 - El Oued</option>
+              <option value="Khenchela">40 - Khenchela</option>
+              <option value="Souk Ahras">41 - Souk Ahras</option>
+              <option value="Tipaza">42 - Tipaza</option>
+              <option value="Mila">43 - Mila</option>
+              <option value="Aïn Defla">44 - Aïn Defla</option>
+              <option value="Naâma">45 - Naâma</option>
+              <option value="Aïn Témouchent">46 - Aïn Témouchent</option>
+              <option value="Ghardaïa">47 - Ghardaïa</option>
+              <option value="Relizane">48 - Relizane</option>
+              <option value="Timimoun">49 - Timimoun</option>
+              <option value="Bordj Badji Mokhtar">50 - Bordj Badji Mokhtar</option>
+              <option value="Ouled Djellal">51 - Ouled Djellal</option>
+              <option value="Béni Abbès">52 - Béni Abbès</option>
+              <option value="In Salah">53 - In Salah</option>
+              <option value="In Guezzam">54 - In Guezzam</option>
+              <option value="Touggourt">55 - Touggourt</option>
+              <option value="Djanet">56 - Djanet</option>
+              <option value="El M'Ghair">57 - El M'Ghair</option>
+              <option value="El Meniaa">58 - El Meniaa</option>
+            </select>
+            <span class="select-arrow">▾</span>
+          </div>
+          <span class="err-msg" data-i18n="err_required">Required</span>
+        </div>
+
+        <!-- Municipality -->
+        <div class="form-group">
+          <label for="municipality" data-i18n="lbl_municipality">Municipality (Commune)</label>
+          <input type="text" id="municipality" name="municipality" data-i18n-placeholder="ph_municipality" placeholder="e.g. Hassi Messaoud" required />
+          <span class="err-msg" data-i18n="err_required">Required</span>
+        </div>
+
+        <!-- Neighborhood -->
+        <div class="form-group">
+          <label for="neighborhood" data-i18n="lbl_neighborhood">Neighborhood / Area</label>
+          <input type="text" id="neighborhood" name="neighborhood" data-i18n-placeholder="ph_neighborhood" placeholder="e.g. Hay El Badr" required />
+          <span class="err-msg" data-i18n="err_required">Required</span>
+        </div>
+
+        <!-- Detailed Description -->
+        <div class="form-group">
+          <label for="description" data-i18n="lbl_description">Order Description</label>
+          <textarea id="description" name="description" rows="4" data-i18n-placeholder="ph_description" placeholder="Describe the item you want: name, size, color, quantity..." required></textarea>
+          <span class="err-msg" data-i18n="err_required">Required</span>
+        </div>
+
+        <button type="submit" class="submit-btn" id="submitBtn">
+          <span class="btn-text" data-i18n="submit_btn">Send Order</span>
+          <span class="btn-loading" style="display:none;">⏳</span>
+          <span class="btn-arrow">→</span>
+        </button>
+
+        <p class="form-note" data-i18n="form_note">
+          * We'll call you within 24h to confirm your order before shipping.
+        </p>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="logo-ar">روكي</span>
+      <span class="logo-en">ROKI</span>
+      <p data-i18n="footer_tagline">Own the Edge. Keep the Vibe.</p>
+    </div>
+    <div class="footer-links">
+      <a href="index.html" data-i18n="nav_home">Home</a>
+      <a href="index.html#collections" data-i18n="nav_collections">Collections</a>
+      <a href="index.html#about" data-i18n="nav_about">About</a>
+    </div>
+    <div class="footer-contact">
+      <p>📱 <a href="https://wa.me/213655295217">+213 655 295 217</a></p>
+      <p data-i18n="footer_dz">🇩🇿 Algeria — All Wilayas</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 ROKI. All rights reserved.</span>
+  </div>
+</footer>
+
+<script src="i18n.js"></script>
+<script src="main.js"></script>
+<script src="order.js"></script>
+</body>
+</html>
