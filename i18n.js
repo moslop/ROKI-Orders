@@ -11,8 +11,6 @@ const translations = {
     hero_sub: "Streetwear that speaks before you do. Crafted for the bold.",
     hero_cta1: "Order Now",
     hero_cta2: "Explore",
-    img_placeholder: "Your Lookbook Photo",
-    img_placeholder2: "Style Shot",
     scroll_down: "Scroll",
     feat_delivery: "Fast Delivery",
     feat_quality: "High Quality",
@@ -20,13 +18,9 @@ const translations = {
     feat_algeria: "All Algeria",
     col_tag: "THE COLLECTION",
     col_title: "Latest Drops",
-    col_item1: "Hoodie Collection",
     col_item1_name: "ROKI CORE",
-    col_item2: "Jacket Line",
     col_item2_name: "URBAN EDGE",
-    col_item3: "Cargo Pants",
     col_item3_name: "STREET CARGO",
-    col_item4: "Caps & Accessories",
     col_item4_name: "ROKI CAPS",
     order_btn: "Order",
     about_tag: "OUR STORY",
@@ -70,6 +64,14 @@ const translations = {
     success_title: "Order Received!",
     success_sub: "We'll contact you soon to confirm your order.",
     success_back: "Back to Home",
+    // Alt text
+    alt_hero_main: "ROKI Lookbook - Main Style",
+    alt_hero_side: "ROKI Style Shot - Side View",
+    alt_col_1: "ROKI Hoodie Collection",
+    alt_col_2: "ROKI Jacket Line",
+    alt_col_3: "ROKI Cargo Pants",
+    alt_col_4: "ROKI Caps & Accessories",
+    alt_about: "ROKI Brand Story",
   },
 
   ar: {
@@ -83,8 +85,6 @@ const translations = {
     hero_sub: "ملابس الشارع التي تتحدث عنك قبل أن تتكلم. صُنعت للجريئين.",
     hero_cta1: "اطلب الآن",
     hero_cta2: "استكشف",
-    img_placeholder: "صورة لوك بوك",
-    img_placeholder2: "لقطة ستايل",
     scroll_down: "تمرير",
     feat_delivery: "توصيل سريع",
     feat_quality: "جودة عالية",
@@ -92,13 +92,9 @@ const translations = {
     feat_algeria: "كل الجزائر",
     col_tag: "المجموعة",
     col_title: "أحدث الإصدارات",
-    col_item1: "مجموعة الهودي",
     col_item1_name: "ROKI CORE",
-    col_item2: "خط الجاكيت",
     col_item2_name: "URBAN EDGE",
-    col_item3: "بناطيل كارجو",
     col_item3_name: "STREET CARGO",
-    col_item4: "قبعات وإكسسوار",
     col_item4_name: "ROKI CAPS",
     order_btn: "اطلب",
     about_tag: "قصتنا",
@@ -142,6 +138,14 @@ const translations = {
     success_title: "تم استلام طلبك!",
     success_sub: "سنتواصل معك قريباً لتأكيد طلبك.",
     success_back: "العودة للرئيسية",
+    // Alt text
+    alt_hero_main: "كتالوج روكي - المظهر الرئيسي",
+    alt_hero_side: "لقطة نمط روكي - عرض جانبي",
+    alt_col_1: "مجموعة هوديز روكي",
+    alt_col_2: "خط جاكيتات روكي",
+    alt_col_3: "سراويل كارجو روكي",
+    alt_col_4: "قبعات وإكسسوارات روكي",
+    alt_about: "قصة علامة روكي التجارية",
   },
 
   fr: {
@@ -155,8 +159,6 @@ const translations = {
     hero_sub: "Le streetwear qui parle avant toi. Conçu pour les audacieux.",
     hero_cta1: "Commander",
     hero_cta2: "Explorer",
-    img_placeholder: "Photo Lookbook",
-    img_placeholder2: "Photo Style",
     scroll_down: "Défiler",
     feat_delivery: "Livraison Rapide",
     feat_quality: "Haute Qualité",
@@ -164,13 +166,9 @@ const translations = {
     feat_algeria: "Toute l'Algérie",
     col_tag: "LA COLLECTION",
     col_title: "Dernières Sorties",
-    col_item1: "Collection Hoodie",
     col_item1_name: "ROKI CORE",
-    col_item2: "Ligne Veste",
     col_item2_name: "URBAN EDGE",
-    col_item3: "Pantalons Cargo",
     col_item3_name: "STREET CARGO",
-    col_item4: "Casquettes & Accessoires",
     col_item4_name: "ROKI CAPS",
     order_btn: "Commander",
     about_tag: "NOTRE HISTOIRE",
@@ -214,6 +212,14 @@ const translations = {
     success_title: "Commande Reçue !",
     success_sub: "Nous vous contacterons bientôt pour confirmer votre commande.",
     success_back: "Retour à l'Accueil",
+    // Alt text
+    alt_hero_main: "Lookbook ROKI - Style Principal",
+    alt_hero_side: "Photo de Style ROKI - Vue de Côté",
+    alt_col_1: "Collection de Hoodies ROKI",
+    alt_col_2: "Ligne de Vestes ROKI",
+    alt_col_3: "Pantalons Cargo ROKI",
+    alt_col_4: "Casquettes & Accessoires ROKI",
+    alt_about: "L'histoire de la marque ROKI",
   }
 };
 
@@ -242,6 +248,12 @@ function applyLang(lang) {
   document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
     const key = el.getAttribute('data-i18n-placeholder');
     if (t[key]) el.setAttribute('placeholder', t[key]);
+  });
+
+  // Update Alt Text
+  document.querySelectorAll('[data-i18n-alt]').forEach(el => {
+    const key = el.getAttribute('data-i18n-alt');
+    if (t[key]) el.setAttribute('alt', t[key]);
   });
 
   // Update select first option
