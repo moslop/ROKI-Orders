@@ -72,6 +72,12 @@ const translations = {
     alt_col_3: "ROKI Cargo Pants",
     alt_col_4: "ROKI Caps & Accessories",
     alt_about: "ROKI Brand Story",
+    // Admin & Features
+    admin_login_title: "Admin Access",
+    admin_login_btn: "Login",
+    admin_dashboard_title: "Product Management",
+    admin_logout: "Logout",
+    theme_toggle: "Toggle Theme",
   },
 
   ar: {
@@ -146,6 +152,12 @@ const translations = {
     alt_col_3: "سراويل كارجو روكي",
     alt_col_4: "قبعات وإكسسوارات روكي",
     alt_about: "قصة علامة روكي التجارية",
+    // Admin & Features
+    admin_login_title: "دخول المسؤول",
+    admin_login_btn: "تسجيل الدخول",
+    admin_dashboard_title: "إدارة المنتجات",
+    admin_logout: "تسجيل الخروج",
+    theme_toggle: "تغيير المظهر",
   },
 
   fr: {
@@ -220,6 +232,12 @@ const translations = {
     alt_col_3: "Pantalons Cargo ROKI",
     alt_col_4: "Casquettes & Accessoires ROKI",
     alt_about: "L'histoire de la marque ROKI",
+    // Admin & Features
+    admin_login_title: "Accès Admin",
+    admin_login_btn: "Connexion",
+    admin_dashboard_title: "Gestion des Produits",
+    admin_logout: "Déconnexion",
+    theme_toggle: "Changer le Thème",
   }
 };
 

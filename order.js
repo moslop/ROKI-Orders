@@ -60,6 +60,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // ===== PRE-FILL FROM URL =====
+  const urlParams = new URLSearchParams(window.location.search);
+  const selectedProduct = urlParams.get('product');
+  if (selectedProduct) {
+    const descriptionField = document.getElementById('description');
+    if (descriptionField) {
+      descriptionField.value = `Order for: ${decodeURIComponent(selectedProduct)}`;
+    }
+  }
+
   // ===== SUBMIT =====
   form.addEventListener('submit', async (e) => {
     e.preventDefault();

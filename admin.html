@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ROKI — Admin Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700;900&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .admin-container { max-width: 1200px; margin: 100px auto; padding: 20px; }
+    .admin-login { max-width: 400px; margin: 200px auto; text-align: center; }
+    .product-card-admin { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 20px; margin-bottom: 20px; display: grid; grid-template-columns: 100px 1fr; gap: 20px; align-items: center; }
+    .product-card-admin img { width: 100px; height: 100px; object-fit: cover; border-radius: 8px; }
+    .admin-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+    .admin-actions { display: flex; gap: 10px; margin-top: 15px; }
+    .hidden { display: none !important; }
+    .admin-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; }
+  </style>
+</head>
+<body class="admin-page">
+
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-ar">روكي</span>
+      <span class="logo-en">ROKI</span>
+    </a>
+    <div class="nav-right">
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <span>/</span>
+        <button class="lang-btn" data-lang="ar">AR</button>
+        <span>/</span>
+        <button class="lang-btn" data-lang="fr">FR</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div id="loginSection" class="admin-login">
+  <h2 style="margin-bottom: 20px;" data-i18n="admin_login_title">Admin Access</h2>
+  <div class="form-group">
+    <input type="password" id="adminCode" placeholder="Enter Access Code" />
+  </div>
+  <button class="btn-primary" id="loginBtn" data-i18n="admin_login_btn">Login</button>
+</div>
+
+<div id="adminDashboard" class="admin-container hidden">
+  <div class="admin-header">
+    <h1 data-i18n="admin_dashboard_title">Product Management</h1>
+    <button class="btn-ghost" id="logoutBtn" data-i18n="admin_logout">Logout</button>
+  </div>
+  <div id="adminProductList"></div>
+</div>
+
+<script src="i18n.js"></script>
+<script src="products.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>

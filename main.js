@@ -51,4 +51,50 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(el);
   });
 
+  // ===== THEME TOGGLE =====
+  const themeToggle = document.getElementById('themeToggle');
+  const sunIcon = document.querySelector('.icon-sun');
+  const moonIcon = document.querySelector('.icon-moon');
+
+  const currentTheme = localStorage.getItem('roki_theme') || 'dark';
+  if (currentTheme === 'light') {
+    document.body.classList.add('light-theme');
+    sunIcon.classList.add('hidden');
+    moonIcon.classList.remove('hidden');
+  }
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('light-theme');
+      const isLight = document.body.classList.contains('light-theme');
+      localStorage.setItem('roki_theme', isLight ? 'light' : 'dark');
+
+      sunIcon.classList.toggle('hidden', isLight);
+      moonIcon.classList.toggle('hidden', !isLight);
+    });
+  }
+
+  // ===== DYNAMIC PRODUCTS =====
+  const productGrid = document.getElementById('dynamicCollectionGrid');
+  if (productGrid) {
+    const products = typeof getProducts === 'function' ? getProducts() : [];
+    productGrid.innerHTML = '';
+
+    products.forEach(p => {
+      const colItem = document.createElement('div');
+      colItem.className = 'col-item';
+      colItem.innerHTML = `
+        <div class="col-img-wrap">
+          <img src="${p.image}" alt="${p.name}" class="col-img">
+          <div class="col-overlay">
+            <span class="col-name">${p.name}</span>
+            <span class="col-price">${p.price}</span>
+            <a href="order.html?product=${encodeURIComponent(p.name)}" class="col-btn" data-i18n="order_btn">Order</a>
+          </div>
+        </div>
+      `;
+      productGrid.appendChild(colItem);
+    });
+  }
+
 });

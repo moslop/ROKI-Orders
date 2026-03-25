@@ -17,6 +17,10 @@
   --gray-light:   #e2e8f0;
   --gray-mid:     #94a3b8;
   --text-dark:    #0d1530;
+  --bg-color:     var(--blue-dark);
+  --bg-gradient:  linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-deep) 50%, #0a1a3f 100%);
+  --nav-bg:       rgba(10, 14, 26, 0.95);
+  --card-bg:      rgba(255, 255, 255, 0.03);
   --font-display: 'Bebas Neue', sans-serif;
   --font-body:    'Barlow', sans-serif;
   --font-arabic:  'Cairo', sans-serif;
@@ -26,15 +30,33 @@
   --shadow-orange: 0 10px 40px rgba(249, 115, 22, 0.25);
 }
 
+.light-theme {
+  --blue-dark:    #f8fafc;
+  --blue-deep:    #f1f5f9;
+  --blue-mid:     #e2e8f0;
+  --blue-accent:  #3b82f6;
+  --blue-light:   #2563eb;
+  --blue-glow:    #1d4ed8;
+  --white:        #0f172a;
+  --off-white:    #1e293b;
+  --gray-light:   #334155;
+  --gray-mid:     #64748b;
+  --bg-color:     #f8fafc;
+  --bg-gradient:  linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  --nav-bg:       rgba(248, 250, 252, 0.95);
+  --card-bg:      rgba(15, 23, 42, 0.05);
+}
+
 /* ===== RESET & BASE ===== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 
 body {
   font-family: var(--font-body);
-  background: var(--blue-dark);
+  background: var(--bg-color);
   color: var(--white);
   overflow-x: hidden;
+  transition: background 0.3s, color 0.3s;
 }
 
 body[dir="rtl"] {
@@ -54,7 +76,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   transition: all 0.3s ease;
 }
 .navbar.scrolled {
-  background: rgba(10, 14, 26, 0.95);
+  background: var(--nav-bg);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(37, 99, 235, 0.2);
   padding: 0 40px;
@@ -128,6 +150,16 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   gap: 20px;
 }
 
+/* THEME TOGGLE */
+.theme-toggle-btn {
+  font-size: 20px;
+  padding: 5px;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+.theme-toggle-btn:hover { background: rgba(255,255,255,0.1); }
+.hidden { display: none !important; }
+
 /* LANG SWITCHER */
 .lang-switcher {
   display: flex;
@@ -190,7 +222,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   position: relative;
   overflow: hidden;
   padding: 120px 60px 80px;
-  background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-deep) 50%, #0a1a3f 100%);
+  background: var(--bg-gradient);
 }
 
 .hero-bg-shapes {
@@ -418,7 +450,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 /* ===== FEATURES BAR ===== */
 .features-bar {
-  background: rgba(255,255,255,0.03);
+  background: var(--card-bg);
   border-top: 1px solid rgba(255,255,255,0.06);
   border-bottom: 1px solid rgba(255,255,255,0.06);
   padding: 28px 60px;
@@ -471,16 +503,15 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 .collection-grid {
   display: grid;
-  grid-template-columns: 1.2fr 1fr 1fr 1fr;
-  gap: 16px;
-  align-items: stretch;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
 }
 
 .col-item .col-img-wrap {
   position: relative;
   overflow: hidden;
   border-radius: var(--radius);
-  background: linear-gradient(135deg, rgba(15,32,87,0.9), rgba(10,14,26,0.9));
+  background: var(--card-bg);
   aspect-ratio: 3/4;
   border: 1px solid rgba(37, 99, 235, 0.15);
   transition: transform 0.4s ease;
@@ -498,13 +529,12 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .col-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(10,14,26,0.9) 0%, transparent 60%);
+  background: linear-gradient(to top, rgba(10,14,26,0.9) 0%, transparent 80%);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   padding: 24px 20px;
-  opacity: 0;
-  transition: opacity 0.3s;
+  opacity: 1; /* Always visible for better UX in dynamic grid */
 }
 .col-item:hover .col-overlay { opacity: 1; }
 
@@ -512,8 +542,14 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-family: var(--font-display);
   font-size: 22px;
   letter-spacing: 3px;
-  color: var(--white);
+  color: #fff; /* Force white for visibility on overlay */
+  margin-bottom: 5px;
+}
+.col-price {
+  font-weight: 700;
+  color: var(--orange-hot);
   margin-bottom: 10px;
+  display: block;
 }
 .col-btn {
   display: inline-block;
