@@ -74,6 +74,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ===== HIDDEN ADMIN ACCESS =====
+  let keyBuffer = "";
+  document.addEventListener('keydown', (e) => {
+    keyBuffer += e.key.toLowerCase();
+    if (keyBuffer.endsWith('aaa')) {
+      window.location.href = 'admin.html';
+    }
+    if (keyBuffer.length > 10) keyBuffer = keyBuffer.substring(1);
+  });
+
   // ===== DYNAMIC PRODUCTS =====
   const productGrid = document.getElementById('dynamicCollectionGrid');
   if (productGrid) {

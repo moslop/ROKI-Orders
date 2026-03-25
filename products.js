@@ -34,6 +34,15 @@ function saveProducts(products) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(products));
 }
 
+function addProduct(newProduct) {
+  const products = getProducts();
+  const id = products.length > 0 ? Math.max(...products.map(p => p.id)) + 1 : 1;
+  const productWithId = { ...newProduct, id };
+  products.push(productWithId);
+  saveProducts(products);
+  return productWithId;
+}
+
 function updateProduct(id, updatedData) {
   const products = getProducts();
   const index = products.findIndex(p => p.id === id);
@@ -43,4 +52,11 @@ function updateProduct(id, updatedData) {
     return true;
   }
   return false;
+}
+
+function deleteProduct(id) {
+  let products = getProducts();
+  products = products.filter(p => p.id !== id);
+  saveProducts(products);
+  return true;
 }

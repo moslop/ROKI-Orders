@@ -11,12 +11,20 @@
   <style>
     .admin-container { max-width: 1200px; margin: 100px auto; padding: 20px; }
     .admin-login { max-width: 400px; margin: 200px auto; text-align: center; }
-    .product-card-admin { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 20px; margin-bottom: 20px; display: grid; grid-template-columns: 100px 1fr; gap: 20px; align-items: center; }
+    .product-card-admin { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 20px; margin-bottom: 20px; display: grid; grid-template-columns: 100px 1fr; gap: 20px; align-items: flex-start; }
     .product-card-admin img { width: 100px; height: 100px; object-fit: cover; border-radius: 8px; }
     .admin-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
     .admin-actions { display: flex; gap: 10px; margin-top: 15px; }
     .hidden { display: none !important; }
     .admin-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; }
+    .add-product-section { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.2); border-radius: 12px; padding: 30px; margin-bottom: 50px; }
+    .add-product-section h2 { margin-bottom: 25px; color: var(--accent); }
+    .btn-delete { background: #ff4444; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-weight: 600; }
+    .btn-delete:hover { background: #cc0000; }
+    .file-input-label { display: inline-block; padding: 10px 20px; background: rgba(255,255,255,0.1); border-radius: 6px; cursor: pointer; border: 1px solid rgba(255,255,255,0.2); margin-bottom: 10px; }
+    .file-input-label:hover { background: rgba(255,255,255,0.2); }
+    input[type="file"] { display: none; }
+    .image-preview { width: 100px; height: 100px; object-fit: cover; border-radius: 8px; margin-bottom: 10px; display: block; background: rgba(0,0,0,0.2); }
   </style>
 </head>
 <body class="admin-page">
@@ -52,6 +60,36 @@
     <h1 data-i18n="admin_dashboard_title">Product Management</h1>
     <button class="btn-ghost" id="logoutBtn" data-i18n="admin_logout">Logout</button>
   </div>
+
+  <div class="add-product-section">
+    <h2 data-i18n="add_product_title">Add New Product</h2>
+    <div class="admin-form-grid">
+      <div class="form-group">
+        <label data-i18n="product_name_label">Product Name</label>
+        <input type="text" id="newName" placeholder="e.g. ROKI Signature Tee">
+      </div>
+      <div class="form-group">
+        <label data-i18n="product_price_label">Price (DA)</label>
+        <input type="text" id="newPrice" placeholder="e.g. 3500 DA">
+      </div>
+      <div class="form-group">
+        <label data-i18n="product_qty_label">Quantity</label>
+        <input type="number" id="newQty" placeholder="e.g. 50">
+      </div>
+      <div class="form-group">
+        <label data-i18n="product_image_label">Image</label>
+        <img id="newImgPreview" class="image-preview hidden">
+        <label class="file-input-label" for="newImgFile">Choose Image</label>
+        <input type="file" id="newImgFile" accept="image/*">
+      </div>
+      <div class="form-group" style="grid-column: span 2;">
+        <label data-i18n="product_desc_label">Description</label>
+        <textarea id="newDesc" placeholder="Describe the product..."></textarea>
+      </div>
+    </div>
+    <button class="btn-primary" id="addProductBtn" style="margin-top: 20px;" data-i18n="add_btn">Add Product</button>
+  </div>
+
   <div id="adminProductList"></div>
 </div>
 
